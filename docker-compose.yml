@@ -12,5 +12,15 @@ services:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
 
+  redis:
+    image: redis
+    container_name: image_processing_service_session_store
+    ports:
+      - "6379:6379"
+    volumes:
+      - session_data:/data
+    restart: unless-stopped
+
 volumes:
     postgres_data:
+    session_data:
