@@ -59,7 +59,7 @@ pub struct SignupRequest {
     pub raw_password: String,
 }
 
-#[derive(Serialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct UserSession {
     pub user_id: Uuid,
     pub expires_at: DateTime<Utc>
