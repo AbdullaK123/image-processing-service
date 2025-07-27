@@ -58,3 +58,18 @@ pub struct SignupRequest {
     pub email: String,
     pub raw_password: String,
 }
+
+#[derive(Serialize, Debug, Clone)]
+pub struct UserSession {
+    pub user_id: Uuid,
+    pub expires_at: DateTime<Utc>
+}
+
+impl UserSession {
+    pub fn new(user_id: Uuid, expires_at: DateTime<Utc>) -> Self {
+        Self {
+            user_id,
+            expires_at
+        }
+    }
+}
