@@ -4,6 +4,7 @@ mod models;
 mod repositories;
 mod security;
 mod middleware;
+mod services;
 
 use aws_sdk_s3::primitives::ByteStream;
 use anyhow::Result;
